@@ -139,7 +139,9 @@ if (bookForm) {
 
     alert("Your details have been sent successfully.\n\nPlease click the payment button below to complete your ₹20 purchase.");
 
-    document.getElementById("paymentButton").style.display = "block";
+    document.getElementById("paymentHeading").style.display = "block";
+document.getElementById("paymentButton").style.display = "block";
+document.getElementById("paymentNotice").style.display = "block";
 
 })
         .catch(function (error) {
