@@ -106,28 +106,3 @@ document.addEventListener("mousemove", (e) => {
     glow.style.top = e.clientY - 90 + "px";
 
 });
-// ===============================
-// Book Purchase + EmailJS
-// ===============================
-
-const bookForm = document.getElementById("bookForm");
-
-if (bookForm) {
-    bookForm.addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-
-        if (!name || !email) {
-            alert("Please enter your Name and Email.");
-            return;
-        }
-
-        document.getElementById("paymentHeading").style.display = "block";
-        document.getElementById("paymentButton").style.display = "block";
-        document.getElementById("paymentNotice").style.display = "block";
-
-        this.style.display = "none";
-    });
-}
