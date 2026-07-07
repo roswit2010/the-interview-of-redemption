@@ -107,7 +107,7 @@ document.addEventListener("mousemove", (e) => {
 
 });
 // ===============================
-// Book Purchase
+// Book Purchase + EmailJS
 // ===============================
 
 const bookForm = document.getElementById("bookForm");
@@ -126,56 +126,6 @@ if (bookForm) {
             return;
         }
 
-        const templateParams = {
-            name: name,
-            email: email,
-            time: new Date().toLocaleString()
-        };
-
-        emailjs.send(
-            "service_p8u8g7c",
-            "template_hd6jnck",
-            templateParams
-        )
-            .then(function () {
-
-                alert("Your details have been sent successfully.\n\nYou will now be redirected to Razorpay.");
-
-                window.location.href = "https://rzp.io/rzp/EOQ6VuZ1";
-
-            })
-            .catch(function (error) {
-
-                console.error(error);
-
-                alert("Error sending your details. Please try again.");
-
-            });
-
-    });
-
-}
-
-// ===============================
-// Book Purchase + EmailJS
-// ===============================
-
-const bookForm = document.getElementById("bookForm");
-
-if (bookForm) {
-
-    bookForm.addEventListener("submit", function (e) {
-
-        e.preventDefault();
-
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-
-        if (!name || !email) {
-            alert("Please enter your name and email.");
-            return;
-        }
-
         emailjs.send(
             "service_p8u8g7c",
             "template_hd6jnck",
@@ -187,16 +137,16 @@ if (bookForm) {
         )
         .then(function () {
 
-            window.open("https://rzp.io/rzp/EOQ6VuZ1", "_blank");
+            alert("Your details have been received successfully.\n\nYou will now be redirected to the Razorpay payment page.");
 
-            alert("Your details have been sent successfully! Complete the ₹20 payment in the Razorpay window.");
+            window.location.href = "https://rzp.io/rzp/EOQ6VuZ1";
 
         })
         .catch(function (error) {
 
-            console.log(error);
+            console.error("EmailJS Error:", error);
 
-            alert("Error sending details. Please try again.");
+            alert("Sorry, something went wrong while sending your details. Please try again.");
 
         });
 
