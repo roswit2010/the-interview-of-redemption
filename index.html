@@ -152,48 +152,33 @@
 
 <strong>How to Purchase</strong><br><br>
 
-1️⃣ Enter your Name and Email Address.<br>
+1️⃣ Click the <b>Buy Now</b> button below.<br>
 
-2️⃣ Click <b>Proceed to Payment</b>.<br>
+2️⃣ Enter your details securely on the Razorpay payment page.<br>
 
-3️⃣ The <b>Buy Now</b> button will appear.<br>
+3️⃣ Complete the ₹20 payment.<br>
 
-4️⃣ Complete the secure ₹20 payment through Razorpay.<br>
-
-5️⃣ After your payment has been successfully received and verified, the PDF copy of <b>The Interview Of Redemption</b> will be emailed to your registered email address.
+4️⃣ After your payment has been successfully received and verified, the PDF copy of <b>The Interview Of Redemption</b> will be emailed to your registered email address within 24 hours.
 
 </p>
 
-            <form id="bookForm">
-            
-                <input type="text" id="name" placeholder="Your Name" required>
-            
-                <input type="email" id="email" placeholder="Your Email Address" required>
-            
-                <button type="submit" class="btn">
-                    Proceed to Payment
-                </button>
-            
-            </form>
-            <h3 id="paymentHeading" style="display:none; color:#ffd369; margin-top:25px;">
-    ✅ Step 2: Complete Your Payment
-</h3>
+            <form>
+    <script
+        src="https://checkout.razorpay.com/v1/payment-button.js"
+        data-payment_button_id="pl_TAgbpwHBrh2aXF"
+        async>
+    </script>
+</form>
 
-<div id="paymentButton" style="display:none; margin-top:20px;">
+<p style="margin-top:20px; color:#ffd369; font-weight:bold;">
 
-    <form>
-        <script
-            src="https://checkout.razorpay.com/v1/payment-button.js"
-            data-payment_button_id="pl_TAgbpwHBrh2aXF"
-            async>
-        </script>
-    </form>
+⚠️ Your order will be processed only after the ₹20 payment has been successfully received and verified. The PDF copy of the book will be sent to your registered email address within 24 hours.
 
-</div>
+</p>
 
-<p id="paymentNotice" style="display:none; margin-top:20px; color:#ffd369; font-weight:bold;">
+<p style="font-size:14px; color:#cccccc; margin-top:15px;">
 
-    ⚠️ Your order will be processed only after the ₹20 payment has been successfully received and verified. The PDF copy of the book will then be sent to your registered email address.
+🔒 Payments are securely processed by Razorpay. Your personal information is used only for payment processing and delivery of your purchased eBook.
 
 </p>
         </div>
@@ -236,14 +221,6 @@
 
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    
-    <script>
-        emailjs.init({
-            publicKey: "59aigOufdbwZviq50",
-        });
-    </script>
-    
     <script src="script.js"></script>
 
 </body>
