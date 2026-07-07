@@ -137,11 +137,11 @@ if (bookForm) {
         )
         .then(function () {
 
-            alert("Your details have been received successfully.\n\nYou will now be redirected to the Razorpay payment page.");
+    alert("Your details have been sent successfully.\n\nPlease click the payment button below to complete your ₹20 purchase.");
 
-            window.location.href = "https://rzp.io/rzp/EOQ6VuZ1";
+    document.getElementById("paymentButton").style.display = "block";
 
-        })
+})
         .catch(function (error) {
 
             console.error("EmailJS Error:", error);
