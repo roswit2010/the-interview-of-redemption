@@ -106,3 +106,52 @@ document.addEventListener("mousemove", (e) => {
     glow.style.top = e.clientY - 90 + "px";
 
 });
+// ===============================
+// Book Purchase
+// ===============================
+
+const bookForm = document.getElementById("bookForm");
+
+if (bookForm) {
+
+    bookForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+
+        if (!name || !email) {
+            alert("Please enter your Name and Email.");
+            return;
+        }
+
+        const templateParams = {
+            name: name,
+            email: email,
+            time: new Date().toLocaleString()
+        };
+
+        emailjs.send(
+            "service_p8u8g7c",
+            "template_hd6jnck",
+            templateParams
+        )
+            .then(function () {
+
+                alert("Your details have been sent successfully.\n\nYou will now be redirected to Razorpay.");
+
+                window.location.href = "https://rzp.io/rzp/EOQ6VuZ1";
+
+            })
+            .catch(function (error) {
+
+                console.error(error);
+
+                alert("Error sending your details. Please try again.");
+
+            });
+
+    });
+
+}
