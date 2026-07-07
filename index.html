@@ -64,9 +64,7 @@
 
                 </p>
 
-                <a href="#buy" class="btn">
-                    Buy for ₹20
-                </a>
+                
 
             </div>
 
@@ -116,10 +114,7 @@
 
                 <p>Instant online copy of the book would be sent to your email after payment verification.</p>
 
-                <a href="#buy" class="btn">
-                    Purchase Now
-                </a>
-
+                
             </div>
 
         </div>
@@ -155,39 +150,30 @@
 
         <div class="payment-card">
 
-            <img src="d15101c9-8ecb-4eca-8e6b-597d83a2c92c.jpg" alt="QR Code">
-
             <h3>Price : ₹20</h3>
-
+            
             <p>
-
-                The online copy (PDF) of this book will be sent only after the payment of ₹20 has been successfully
-                received and verified.
-
+            
+                Secure payment is powered by <b>Razorpay</b>.
+            
+                Please enter your name and email below.
+            
+                When you click <b>Proceed to Payment</b>, you will be redirected to Razorpay to complete the ₹20 payment securely.
+            
+                Once your payment is verified, the PDF copy of <b>The Interview Of Redemption</b> will be sent to your email
+                address.
+            
             </p>
 
-            <form action="https://formsubmit.co/roswit1510@gmail.com" method="POST">
+            <form id="bookForm">
             
-                <!-- FormSubmit Settings -->
-                <input type="hidden" name="_subject" value="📚 New Book Purchase - THE INTERVIEW OF REDEMPTION">
+                <input type="text" id="name" placeholder="Your Name" required>
             
-                <input type="hidden" name="_captcha" value="false">
+                <input type="email" id="email" placeholder="Your Email Address" required>
             
-                <input type="hidden" name="_template" value="table">
-            
-                <!-- Redirect after successful submission -->
-            
-                <!-- Customer Details -->
-            
-                <input type="text" name="Name" placeholder="Your Name" required>
-            
-                <input type="email" name="Email" placeholder="Your Email Address" required>
-            
-                <input type="text" name="UPI Transaction ID" placeholder="UPI Transaction ID" required>
-            
-                <textarea name="Message" placeholder="Additional Message"></textarea>
-            
-                <button type="submit">Submit</button>
+                <button type="submit" class="btn">
+                    Proceed to Payment
+                </button>
             
             </form>
         </div>
@@ -230,6 +216,14 @@
 
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <script>
+        emailjs.init({
+            publicKey: "59aigOufdbwZviq50",
+        });
+    </script>
+    
     <script src="script.js"></script>
 
 </body>
