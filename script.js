@@ -155,3 +155,51 @@ if (bookForm) {
     });
 
 }
+
+// ===============================
+// Book Purchase + EmailJS
+// ===============================
+
+const bookForm = document.getElementById("bookForm");
+
+if (bookForm) {
+
+    bookForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+
+        if (!name || !email) {
+            alert("Please enter your name and email.");
+            return;
+        }
+
+        emailjs.send(
+            "service_p8u8g7c",
+            "template_hd6jnck",
+            {
+                name: name,
+                email: email,
+                time: new Date().toLocaleString()
+            }
+        )
+        .then(function () {
+
+            window.open("https://rzp.io/rzp/EOQ6VuZ1", "_blank");
+
+            alert("Your details have been sent successfully! Complete the ₹20 payment in the Razorpay window.");
+
+        })
+        .catch(function (error) {
+
+            console.log(error);
+
+            alert("Error sending details. Please try again.");
+
+        });
+
+    });
+
+}
