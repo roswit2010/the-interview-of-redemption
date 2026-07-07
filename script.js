@@ -113,9 +113,7 @@ document.addEventListener("mousemove", (e) => {
 const bookForm = document.getElementById("bookForm");
 
 if (bookForm) {
-
-    bookForm.addEventListener("submit", function (e) {
-
+    bookForm.addEventListener("submit", function(e) {
         e.preventDefault();
 
         const name = document.getElementById("name").value.trim();
@@ -126,33 +124,10 @@ if (bookForm) {
             return;
         }
 
-        emailjs.send(
-            "service_p8u8g7c",
-            "template_hd6jnck",
-            {
-                name: name,
-                email: email,
-                time: new Date().toLocaleString()
-            }
-        )
-        .then(function () {
+        document.getElementById("paymentHeading").style.display = "block";
+        document.getElementById("paymentButton").style.display = "block";
+        document.getElementById("paymentNotice").style.display = "block";
 
-    alert("Your details have been sent successfully.\n\nPlease click the payment button below to complete your ₹20 purchase.");
-
-document.getElementById("paymentHeading").style.display = "block";
-document.getElementById("paymentButton").style.display = "block";
-document.getElementById("paymentNotice").style.display = "block";
-document.getElementById("securityNotice").style.display = "block";
-
-})
-        .catch(function (error) {
-
-            console.error("EmailJS Error:", error);
-
-            alert("Sorry, something went wrong while sending your details. Please try again.");
-
-        });
-
+        this.style.display = "none";
     });
-
 }
